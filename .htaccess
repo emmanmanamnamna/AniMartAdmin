@@ -1,0 +1,6 @@
+RewriteEngine On
+
+# Serve the admin panel (AdminAnIMart/web) at the domain root.
+# Everything outside it (source, supabase, node_modules, .idea) is not served.
+RewriteCond %{REQUEST_URI} !^/AdminAnIMart/web/
+RewriteRule ^(.*)$ AdminAnIMart/web/$1 [L]
